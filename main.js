@@ -1,7 +1,6 @@
 class ProductManager {
     constructor(products){
         this.products = products;
-        products = ([])
     }
 
     addProducts(title, description, price, thumbnail, code, stock, id){
@@ -13,10 +12,13 @@ class ProductManager {
         this.code = code;
         this.stock = stock;
         
-        this.addProducts(id) = this.products.length + 1
+        for (let i = 0; i < products.length; i++) {
+            products = products.push(product);
+        }
+
     }
 }
 
-new ProductManager("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
-
+let product = new ProductManager("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
+let products = []
 console.log(ProductManager.products)
