@@ -1,6 +1,6 @@
 class ProductManager {
-    constructor(products){
-        this.products = products;
+    constructor(){
+        this.products = []
     }
 
     addProducts(title, description, price, thumbnail, code, stock, id){
@@ -15,7 +15,7 @@ class ProductManager {
         for (let i = 0; i < products.length; i++) {
             products = products.push(product);
 
-            this.id = product.length
+            id = products.length
         }
 
 
@@ -43,8 +43,7 @@ class ProductManager {
     }    
 }
 
-let product = new ProductManager("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
-let products = []
-console.log(ProductManager.products)
+const product = new ProductManager();
 
-//Tira error en la consola
+product.addProducts("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
+
