@@ -46,3 +46,5 @@ class ProductManager {
 let product = new ProductManager("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
 let products = []
 console.log(ProductManager.products)
+
+//Tira error en la consola
