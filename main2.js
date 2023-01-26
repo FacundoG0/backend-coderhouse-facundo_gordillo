@@ -1,25 +1,18 @@
 class ProductManager {
-    constructor(product){
-        this.product = product
+    constructor(){
+        this.products = [];
     }
 
-    addProducts(products, title, description, price, thumbnail, code, stock, id){
-
+    addProduct(title, description, price, thumbnail, code, stock, id){
         this.title = title;
         this.description = description;
         this.price = price;
         this.thumbnail = thumbnail;
         this.code = code;
         this.stock = stock;
-        this.products = products;
-        products = [];
-        
-        for (let i = 0; i < products.length; i++) {
-            products = products.push(product);
 
-            id = products.length
-        }
-
+        this.products.push(product)
+        this.id = this.products.length
 
         if (!title || !description || !price || !thumbnail || !code || !stock){
             console.log("Todos los campos son requeridos"); return;
@@ -41,11 +34,12 @@ class ProductManager {
     };
 
     getAllProducts(){
-        return this.products;
+        return console.log(this.products);
     }    
 }
 
-const producto = new ProductManager();
+const product = new ProductManager();
 
-producto.addProducts("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
+product.addProduct("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
 
+product.getAllProducts()
