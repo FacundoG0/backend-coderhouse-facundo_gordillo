@@ -3,6 +3,8 @@ class ProductManager {
         this.products = [];
     }
 
+
+    // FUNCIONA
     addProduct(title, description, price, thumbnail, code, stock, id){
         this.title = title;
         this.description = description;
@@ -19,20 +21,32 @@ class ProductManager {
         }
     }
 
+
+    // FUNCIONA
     getProduct(code){
-        return this.products.find(product => product.code === code);
+        let product = this.products.find(element => toString(this.code) === toString(code))
+        
+        if (product == undefined){
+            console.log("No se ha encontrado el producto")
+        }
+
+        else return console.log(product)
     };
 
+
+    // FUNCIONA
     getProductById(id){
-        let product = this.products.find(product => product.id === id)
+        let product = this.products.find(element => this.id === id)
         
-        if (!product){
-            console.log("No fue encontrado");
-        } 
-        
-        return product;
+        if (product == undefined){
+            console.log("No se ha encontrado el producto")
+        }
+
+        else return console.log(product)
     };
 
+
+    // FUNCIONA
     getAllProducts(){
         return console.log(this.products);
     }    
@@ -40,6 +54,9 @@ class ProductManager {
 
 const product = new ProductManager();
 
-product.addProduct("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "1", "25");
+product.addProduct("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "130", "25");
 
-product.getAllProducts()
+// product.getAllProducts()
+
+// product.getProductById(1)
+product.getProduct(130)
