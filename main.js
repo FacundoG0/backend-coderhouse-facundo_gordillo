@@ -21,6 +21,8 @@ class ProductManager {
         product.id = length + 1
         
         this.products.push(product)
+
+        fs.writeFileSync("data.json", JSON.stringify(this.products))
     }
 
 
