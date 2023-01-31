@@ -7,20 +7,20 @@ class ProductManager {
 
 
     // FUNCIONA
-    addProduct(title, description, price, thumbnail, code, stock, id){
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.thumbnail = thumbnail;
-        this.code = code;
-        this.stock = stock;
+    addProduct(product){
 
-        this.products.push(product)
-        this.id = this.products.length
 
-        if (!title || !description || !price || !thumbnail || !code || !stock){
-            console.log("Todos los campos son requeridos"); return;
+        // DESDE ACÁ FUNCIONA
+        if (product.title == "" || product.description == "" || product.price == "" || product.thumbnail == "" || product.code == "" || product.stock == "" ){
+            
+            
+            console.log("Todos los campos son requeridos");
         }
+
+        let length = this.products.length
+        product.id = length + 1
+        
+        this.products.push(product)
     }
 
 
@@ -56,9 +56,29 @@ class ProductManager {
 
 const product = new ProductManager();
 
-product.addProduct("LIMPIAVIDRIOS", "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA", "$450", "USUARIO/IMAGES", "130", "25");
+product.addProduct({
+    title: "LIMPIAVIDRIOS",
+    description: "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA",
+    price: "$450",
+    thumbnail: "USUARIO/IMAGES",
+    code: "130",
+    stock: "25",
+    id: ""});
+    
 
-// product.getAllProducts()
+product.addProduct({
+    title: "TOMATE",
+    description: "PROVENIENTE DEL ESTE ARGENTINO",
+    price: "$850",
+    thumbnail: "USUARIO/IMAGES",
+    code: "140",
+    stock: "15",
+    id: ""});
+
+
+
+
+product.getAllProducts()
 
 // product.getProductById(1)
-product.getProduct(130)
+// product.getProduct(130)
