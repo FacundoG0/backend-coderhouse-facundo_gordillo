@@ -24,27 +24,27 @@ class ProductManager {
     }
 
 
-    // FUNCIONA
+    // NO FUNCIONA
     getProduct(code){
-        let product = this.products.find(element => toString(this.code) === toString(code))
-        
-        if (product == undefined){
-            console.log("No se ha encontrado el producto")
+        const buscar_producto = this.products.find(element => element.code === code);
+
+        if (buscar_producto) {
+            console.log(buscar_producto)
         }
 
-        else return console.log(product)
+        else console.log("No se encontraron coincidencias")
     };
 
 
     // FUNCIONA
     getProductById(id){
-        let product = this.products.find(element => this.id === id)
-        
-        if (product == undefined){
-            console.log("No se ha encontrado el producto")
+        const buscar_producto = this.products.find(element => element.id === id);
+
+        if (buscar_producto) {
+            console.log(buscar_producto)
         }
 
-        else return console.log(product)
+        else console.log("No se encontraron coincidencias")
     };
 
 
@@ -61,8 +61,8 @@ product.addProduct({
     description: "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA",
     price: "$450",
     thumbnail: "USUARIO/IMAGES",
-    code: "130",
-    stock: "25",
+    code: 130,
+    stock: 25,
     id: ""});
     
 
@@ -71,14 +71,14 @@ product.addProduct({
     description: "PROVENIENTE DEL ESTE ARGENTINO",
     price: "$850",
     thumbnail: "USUARIO/IMAGES",
-    code: "140",
-    stock: "15",
+    code: 140,
+    stock: 15,
     id: ""});
 
 
 
 
-product.getAllProducts()
+// product.getAllProducts()
 
-// product.getProductById(1)
-// product.getProduct(130)
+product.getProductById(1)
+product.getProduct(140)
