@@ -53,8 +53,50 @@ class ProductManager {
     // FUNCIONA
     getAllProducts(){
         return console.log(this.products);
-    }    
+    }
+
+
+    // NUEVO: 
+    // Para buscar el producto debe colocar el ID del producto correspondiente y actualizar el resto de los datos que precisa.
+
+    updateProduct(product_updated){
+
+        let update_product = this.products.find(element => element.id === product_updated.id);
+
+        if (update_product){
+
+            // ver producto antes de cambiar
+            // console.log(update_product)
+            
+            update_product.title = product_updated.title
+            update_product.description = product_updated.description
+            update_product.price = product_updated.price
+            update_product.thumbnail = product_updated.thumbnail
+            update_product.code = product_updated.code
+            update_product.stock = product_updated.stock
+
+            // ver producto de salida:
+            // console.log(update_product)
+            
+
+            // corroborar array:
+            console.log(this.products)
+
+            // Guardar datos actualizados
+            fs.writeFileSync("data.json", JSON.stringify(this.products))
+        }
+
+        else console.log("No se encontraron resultados")
+    }
 }
+
+
+
+// *********************************************************************************************************************************
+// *********************************************************************************************************************************
+// *********************************************************************************************************************************
+// *********************************************************************************************************************************
+
 
 const product = new ProductManager();
 
@@ -82,5 +124,14 @@ product.addProduct({
 
 // product.getAllProducts()
 
-product.getProductById(1)
-product.getProduct(140)
+// product.getProductById(1)
+// product.getProduct(140)
+
+product.updateProduct({
+    title: "REEMPLAZO",
+    description: "LIMPIAVIDRIOS CREADO A BASE DE ACETONA Y ALCOHOL - INDUSTRIA ARGENTINA",
+    price: "$970",
+    thumbnail: "USUARIO/IMAGES",
+    code: 130,
+    stock: 5,
+    id: 1});
