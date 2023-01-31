@@ -24,7 +24,7 @@ class ProductManager {
     }
 
 
-    // NO FUNCIONA
+    // FUNCIONA
     getProduct(code){
         const buscar_producto = this.products.find(element => element.code === code);
 
