@@ -80,9 +80,38 @@ class ProductManager {
             
 
             // corroborar array:
-            console.log(this.products)
+            // console.log(this.products)
 
             // Guardar datos actualizados
+            fs.writeFileSync("data.json", JSON.stringify(this.products))
+        }
+
+        else console.log("No se encontraron resultados")
+    }
+
+
+
+    // ELIMINAR PRODUCTO
+    deleteProduct(id){
+        let product_to_delete = this.products.find(element => element.id === id);
+
+        if (product_to_delete){
+
+            let posicion_array = id - 1
+
+            console.log(`la posicion ${posicion_array} (id: ${id}) del array corresponde a: `, this.products[posicion_array])
+            // hasta arriba funciona
+
+
+            const eliminados = this.products.splice(posicion_array, posicion_array)
+            console.log("los elementos eliminados son", eliminados)
+
+            // explicación: en eliminados quedan almacenado el producto con el correspondiente ID que se quiere eliminar
+            // splice borra como inicio el parametro que le pasamos primero, y como final el segundo parametro que le pasamos: al pasarle el mismo parametro dos veces, solo borra ese
+            // luego se imprime el array sin el producto a eliminar y se guarda en el archivo el nuevo array
+            
+            console.log("**************SEPARADOR**************")
+            console.log(this.products)
             fs.writeFileSync("data.json", JSON.stringify(this.products))
         }
 
@@ -98,6 +127,8 @@ class ProductManager {
 // *********************************************************************************************************************************
 
 
+// AGREGAR PRODUCTOS
+
 const product = new ProductManager();
 
 product.addProduct({
@@ -109,7 +140,6 @@ product.addProduct({
     stock: 25,
     id: ""});
     
-
 product.addProduct({
     title: "TOMATE",
     description: "PROVENIENTE DEL ESTE ARGENTINO",
@@ -119,6 +149,14 @@ product.addProduct({
     stock: 15,
     id: ""});
 
+product.addProduct({
+    title: "AUTITO DE JUGUETE",
+    description: "RUEDITAS DE PLASTICO Y CHASIS DE METAL",
+    price: "$1.250",
+    thumbnail: "USUARIO/IMAGES",
+    code: 170,
+    stock: 8,
+    id: ""});
 
 
 
@@ -135,3 +173,6 @@ product.updateProduct({
     code: 130,
     stock: 5,
     id: 1});
+
+
+product.deleteProduct(2)
