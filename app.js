@@ -1,8 +1,18 @@
 import express from "express";
 
-app.get('/api/getFrase', (req, res) => {
-    res.send(frase)
-})
+import prueba from './productManager.js'
+
+console.log(prueba)
+
+
+
+
+
+
+
+
+
+
 
 
 

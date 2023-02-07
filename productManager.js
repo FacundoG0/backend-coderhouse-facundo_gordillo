@@ -117,6 +117,11 @@ class ProductManager {
 
         else console.log("No se encontraron resultados")
     }
+
+    exportProducts(){
+        return this.products
+    }
+
 }
 
 
@@ -175,4 +180,8 @@ product.updateProduct({
     id: 1});
 
 
-product.deleteProduct(2)
+
+
+export function prueba(){
+    product.exportProducts()
+}
