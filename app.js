@@ -1,16 +1,10 @@
-import express from "express";
+import express from "express"
+const app = express()
 
-import prueba from './productManager.js'
+import fs from "fs"
 
-console.log(prueba)
-
-
-
-
-
-
-
-
+const read = fs.readFileSync('./data.json', 'utf-8')
+console.log(read)
 
 
 

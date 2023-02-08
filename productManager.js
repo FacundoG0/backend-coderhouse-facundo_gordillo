@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs from "fs"
 
 class ProductManager {
     constructor(){
@@ -178,10 +178,3 @@ product.updateProduct({
     code: 130,
     stock: 5,
     id: 1});
-
-
-
-
-export function prueba(){
-    product.exportProducts()
-}
