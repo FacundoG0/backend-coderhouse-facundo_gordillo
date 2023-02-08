@@ -3,7 +3,7 @@ import express from "express"
 const app = express()
 
 // importar datos de array products productManager
-import {exportProducts} from "./productManager.js"
+import {exportProducts} from './productManager.js'
 const data = exportProducts()
 
 // filtrar productos por ID
