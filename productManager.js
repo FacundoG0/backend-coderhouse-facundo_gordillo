@@ -178,3 +178,7 @@ product.updateProduct({
     code: 130,
     stock: 5,
     id: 1});
+
+    export function exportProducts(){
+        return product.exportProducts()
+    }

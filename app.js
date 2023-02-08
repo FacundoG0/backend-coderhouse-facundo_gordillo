@@ -1,13 +1,35 @@
+// importar express
 import express from "express"
 const app = express()
 
-import fs from "fs"
+// importar datos de array products productManager
+import {exportProducts} from "./productManager.js"
+const data = exportProducts()
 
-const read = fs.readFileSync('./data.json', 'utf-8')
-console.log(read)
+// filtrar productos por ID
+app.get('/products/getpbi/:num', (req, res) => {
+    let num = parseInt(req.params.num)
+    
+    if(!isNaN(num)){
+        if (num >= 1 && num <= data.length){
+            res.send(data[num-1])
+        } else {
+            res.send({error: "El parametro está fuera de rango"})
+        }
+    }else{
+        res.send({error: "El parametro ingresado no es un numero"})       
+    }
+})
+    
+    
 
 
 
+
+
+app.get('/products/getFrase', (req, res) => {
+    res.send(data)
+})
 
 
 
