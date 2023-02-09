@@ -6,6 +6,23 @@ const app = express()
 import {exportProducts} from './productManager.js'
 const data = exportProducts()
 
+// traer productos (todos)
+app.get('/products/getAll', (req, res) => {
+    res.send(data)
+})
+
+// traer solo los indicados
+app.get('/products/getOnly/:num', (req, res) => {
+    let num = parseInt(req.params.num)
+
+    for (let i = 0; i < data.length && i != num; i++) {
+        const arrayNuevo = []
+        arrayNuevo.push(data[i])
+
+        return res.send(arrayNuevo)
+    }
+})
+
 // filtrar productos por ID
 app.get('/products/getpbi/:num', (req, res) => {
     let num = parseInt(req.params.num)
