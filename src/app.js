@@ -15,12 +15,14 @@ app.get('/products/getAll', (req, res) => {
 app.get('/products/getOnly/:num', (req, res) => {
     let num = parseInt(req.params.num)
 
-    for (let i = 0; i < data.length && i != num; i++) {
-        const arrayNuevo = []
-        arrayNuevo.push(data[i])
+    let selectedArray = []
 
-        return res.send(arrayNuevo)
+    for (let i = 0; i < num; i++) {
+        const selected = data[i];    
+        selectedArray.push(selected)
     }
+
+    res.send(selectedArray)
 })
 
 // filtrar productos por ID
