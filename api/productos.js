@@ -11,7 +11,7 @@ class Productos {
 
     listAll(){
         if (this.productos.length == 0) {
-            console.log("No hay productos cargados")
+            return {error: "No hay productos cargados"}
         }else{
             return this.productos
         }
