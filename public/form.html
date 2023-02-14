@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Add product</title>
+</head>
+<body>
+    
+    <form action="/api/products/add" method="POST" class="add_product_form" id="add_product_form" enctype="multipart/form-data"> 
+        <input type="text" placeholder="Titulo del producto" class="input_product" id="title_input" name="title">
+        <textarea type="text" placeholder="Descripción" class="input_product" id="description_input" name="description"></textarea>
+        <input type="text" placeholder="Código" class="input_product" id="code_input" name="code">
+        <input type="number" placeholder="Precio" class="input_product" id="price_input" name="price">
+        <input type="text" placeholder="Estado" class="input_product" id="status_input" name="status">
+        <input type="number" placeholder="Stock" class="input_product" id="stock_input" name="stock">
+        <input type="text" placeholder="Categoría" class="input_product" id="category_input" name="category">
+        <input type="file" class="input_product" id="images_input" multiple name="images">
+        <button type="submit">Agregar</button>
+    </form>
+
+
+</body>
+</html>
