@@ -4,7 +4,7 @@ const app = express();
 
 let productos = new Productos()
  
-app.use(express.static('public'))
+app.use(express.static('../public'))
 
 const router = express.Router()
 app.use('/api', router)
