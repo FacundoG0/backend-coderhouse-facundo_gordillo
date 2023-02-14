@@ -26,7 +26,6 @@ router.post('/products/add', (req, res) => {
     let producto = req.body
     productos.add(producto)
     res.json(producto)
-    res.json(producto)
 })
 
 router.put('/products/update/:id', (req, res) => {
@@ -40,12 +39,6 @@ router.delete('/products/delete/:id', (req, res) => {
     let producto = productos.delete(id)
     res.json(producto)
 })
-
-// routerProductos.post('/addproduct', (req, res) => {
-//     productos.push(req.body)
-//     res.json(req.body)
-// })
-
 
 
 // configurar servidor
